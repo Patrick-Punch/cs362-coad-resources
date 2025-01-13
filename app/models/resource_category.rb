@@ -1,3 +1,4 @@
+# The Resource Category class represents the type of resources required
 class ResourceCategory < ApplicationRecord
 
   has_and_belongs_to_many :organizations

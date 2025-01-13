@@ -1,3 +1,4 @@
+# The Ticket class represents a digital ticket indicating the need for resources in a specific region from a specific organization
 class Ticket < ApplicationRecord
 
   belongs_to :region

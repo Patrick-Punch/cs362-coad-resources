@@ -1,3 +1,4 @@
+# The User class represents a person associated with an Organization
 class User < ApplicationRecord
 
   enum role: [:admin, :organization]

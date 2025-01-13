@@ -1,3 +1,4 @@
+# The Region class represents the area specified
 class Region < ApplicationRecord
 
   has_many :tickets
