@@ -12,4 +12,11 @@ RSpec.describe User, type: :model do
     expect(user).to respond_to(:role)
   end
 
+  ## CARDINALITY
+
+  it "can belong to an organization" do
+    should belong_to(:organization).optional
+  end
+
+
 end

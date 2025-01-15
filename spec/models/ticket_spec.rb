@@ -30,8 +30,8 @@ RSpec.describe Ticket, type: :model do
     should belong_to(:resource_category)
   end
 
-  it "belongs to an organization" do
-    should belong_to(:organization)
+  it "can belong to an organization" do
+    should belong_to(:organization).optional
   end
 
 end
