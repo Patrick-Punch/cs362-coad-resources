@@ -4,20 +4,16 @@ RSpec.describe ResourceCategory, type: :model do
 
   let(:res_cat) { ResourceCategory.new }
 
-  it "exists" do
-    ResourceCategory.new
-  end
-
   it "has a name" do
     expect(res_cat).to respond_to(:name)
   end
 
   it "has and belongs to many organizations" do
-    expect(res_cat).to respond_to(:organizations)
+    should have_and_belong_to_many(:organizations)
   end
 
-  it "has tickets" do
-    expect(res_cat).to respond_to(:tickets)
+  it "have many tickets" do
+    should have_many(:tickets)
   end
-  
+
 end
