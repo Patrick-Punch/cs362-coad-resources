@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Organization, type: :model do
+RSpec.describe Organization, "it should have certain attributes" , type: :model do
 
   let(:org) { Organization.new }
 
@@ -61,6 +61,20 @@ RSpec.describe Organization, type: :model do
 
   it "has a description" do
     expect(org).to respond_to(:description)
+  end
+
+  ## CARDINALITY
+
+  it "has many users" do
+    should have_many(:users)
+  end
+
+  it "has many users" do
+    should have_many(:tickets)
+  end
+
+  it "has and belongs to many resource categories" do
+    should have_and_belong_to_many(:resource_categories)
   end
 
 end
