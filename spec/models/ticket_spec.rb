@@ -38,6 +38,11 @@ RSpec.describe Ticket, type: :model do
   end
 
   ## VALIDATION TESTS
+
+  # validates_presence_of :name, :phone, :region_id, :resource_category_id
+  # validates_length_of :name, minimum: 1, maximum: 255, on: :create
+  # validates_length_of :description, maximum: 1020, on: :create
+  # validates :phone, phony_plausible: true
   describe "validation tests" do
     it "validates presence of name" do
       expect(ticket).to validate_presence_of(:name)
@@ -47,6 +52,22 @@ RSpec.describe Ticket, type: :model do
       expect(ticket).to validate_length_of(:name).is_at_most(255)
       expect(ticket).to validate_length_of(:name).is_at_least(1)
     end
+
+    it "validates description length" do
+      expect(ticket).to validate_length_of(:description).is_at_most(1020)
+    end
+
+    it "validates presence of phone" do
+      expect(ticket).to validate_presence_of(:phone)
+    end
+
+    # it "validates phony_plausible" do
+    #   expect(ticket).to validate :phone_number, phony_plausible: true
+    # end
+    
+    specify {
+      should allow_values('+1-971-470-2258','+48-555-555-555').for(:phone)
+    }
   end
 
   ## MEMBER FUNCTION TESTS
