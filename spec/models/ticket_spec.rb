@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Ticket, type: :model do
 
-  let(:ticket) { Ticket.new(:id = 123) }
+  let (:ticket) { Ticket.new(id: 123) }
 
   describe "attribute tests" do
     it "has a name" do
@@ -44,8 +44,8 @@ RSpec.describe Ticket, type: :model do
     end
 
     it "validates name length" do
-      expect(ticket).to validate_length_of(:name)is_at_most(255)
-      expect(ticket).to validate_length_of(:name)is_at_least(1)
+      expect(ticket).to validate_length_of(:name).is_at_most(255)
+      expect(ticket).to validate_length_of(:name).is_at_least(1)
     end
   end
 
@@ -56,11 +56,12 @@ RSpec.describe Ticket, type: :model do
     end
   end
 
+
   ## SCOPE TESTS
   describe "scope tests" do
-    it "scopes closed tickets" do 
+    it "scopes closed tickets" do
       region = Region.create!(name: "region1")
-      resource_category = ResourceCategory.create!(name: "resource1")
+      resource = ResourceCategory.create!(name: "resource1")
 
       ticket = Ticket.create!(
         name: "ticket",
@@ -71,9 +72,9 @@ RSpec.describe Ticket, type: :model do
       )
 
       # How we look at scopes:
-      # Ticket.closed
-      # Ticket.open
-      
+      #Ticket.closed
+      #Ticket.open
+
       expect(Ticket.closed).to include(ticket)
       expect(Ticket.open).to_not include(ticket)
     end
