@@ -61,13 +61,10 @@ RSpec.describe Ticket, type: :model do
       expect(ticket).to validate_presence_of(:phone)
     end
 
-    # it "validates phony_plausible" do
-    #   expect(ticket).to validate :phone_number, phony_plausible: true
-    # end
-    
-    specify {
-      should allow_values('+1-971-470-2258','+48-555-555-555').for(:phone)
-    }
+    it "validates phony_plausible" do
+      expect(ticket).not_to allow_value("hello").for(:phone)
+      expect(ticket).to allow_value('+1-971-470-2258').for(:phone)
+    end
   end
 
   ## MEMBER FUNCTION TESTS
