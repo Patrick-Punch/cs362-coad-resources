@@ -39,10 +39,6 @@ RSpec.describe Ticket, type: :model do
 
   ## VALIDATION TESTS
 
-  # validates_presence_of :name, :phone, :region_id, :resource_category_id
-  # validates_length_of :name, minimum: 1, maximum: 255, on: :create
-  # validates_length_of :description, maximum: 1020, on: :create
-  # validates :phone, phony_plausible: true
   describe "validation tests" do
     it "validates presence of name" do
       expect(ticket).to validate_presence_of(:name)
@@ -69,6 +65,33 @@ RSpec.describe Ticket, type: :model do
 
   ## MEMBER FUNCTION TESTS
   describe "member function tests" do
+    it "should not be closed if open" do
+      expect(ticket.open?).not_to eq "closed" 
+    end
+
+    it "should be captured if it belongs to an organization" do
+      region = Region.create!(name: "region1")
+      resource = ResourceCategory.create!(name: "resource1")
+
+      organization = Organization.create!(
+        name: "organization1",
+        email: "organization@hotmail.com",
+        phone: "+1-555-555-5555",
+        secondary_phone: "+1-666-666-6666",
+        status: "approved",
+        primary_name: "primary",
+        secondary_name: "secondary",
+      )
+      local_ticket = Ticket.create!(
+        name: "ticket",
+        phone: "+1-555-555-1212",
+        region_id: region.id,
+        resource_category_id: resource.id,
+        organization_id: organization.id
+      )
+      expect(local_ticket.captured?).to eq true
+    end
+
     it "converts to string" do
       expect(ticket.to_s).to eq "Ticket 123"
     end
@@ -76,7 +99,31 @@ RSpec.describe Ticket, type: :model do
 
 
   ## SCOPE TESTS
+  # scope :open, -> () { where closed: false, organization_id: nil }
+  # scope :closed, -> () { where closed: true }
+  # scope :all_organization, -> () { where(closed: false).where.not(organization_id: nil) }
+  # scope :organization, -> (organization_id) { where(organization_id: organization_id, closed: false) }
+  # scope :closed_organization, -> (organization_id) { where(organization_id: organization_id, closed: true) }
+  # scope :region, -> (region_id) { where(region_id: region_id) }
+  # scope :resource_category, -> (resource_category_id) { where(resource_category_id: resource_category_id) 
   describe "scope tests" do
+
+    it "scopes open tickets" do
+      region = Region.create!(name: "region1")
+      resource = ResourceCategory.create!(name: "resource1")
+
+      ticket = Ticket.create!(
+        name: "ticket",
+        phone: "+1-555-555-1212",
+        region_id: region.id,
+        resource_category_id: resource.id,
+        organization_id: nil,
+        closed: false
+      )
+      expect(Ticket.closed).to_not include(ticket)
+      expect(Ticket.open).to include(ticket)
+    end
+
     it "scopes closed tickets" do
       region = Region.create!(name: "region1")
       resource = ResourceCategory.create!(name: "resource1")
