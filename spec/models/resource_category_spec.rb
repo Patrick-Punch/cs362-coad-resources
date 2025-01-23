@@ -8,6 +8,8 @@ RSpec.describe ResourceCategory, type: :model do
     expect(res_cat).to respond_to(:name)
   end
 
+  ## CARDINALITY
+
   it "has and belongs to many organizations" do
     should have_and_belong_to_many(:organizations)
   end
