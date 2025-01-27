@@ -97,15 +97,6 @@ RSpec.describe Ticket, type: :model do
     end
   end
 
-
-  ## SCOPE TESTS
-  # scope :open, -> () { where closed: false, organization_id: nil }
-  # scope :closed, -> () { where closed: true }
-  # scope :all_organization, -> () { where(closed: false).where.not(organization_id: nil) }
-  # scope :organization, -> (organization_id) { where(organization_id: organization_id, closed: false) }
-  # scope :closed_organization, -> (organization_id) { where(organization_id: organization_id, closed: true) }
-  # scope :region, -> (region_id) { where(region_id: region_id) }
-  # scope :resource_category, -> (resource_category_id) { where(resource_category_id: resource_category_id) 
   describe "scope tests" do
 
     it "scopes open tickets" do
