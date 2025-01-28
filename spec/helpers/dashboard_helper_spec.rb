@@ -11,5 +11,36 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe DashboardHelper, type: :helper do
+  describe "#dashboard_for" do
+    let(:user) { double("User") }
 
+    it "returns 'admin_dashboard'" do
+      expect(user).to receive(:admin?).and_return(true)
+      result = helper.dashboard_for(user)
+      expect(result).to eq('admin_dashboard')
+    end
+
+    it "returns 'organization_submitted_dashboard'" do
+      organization = double("Organization", submitted?: true, approved?: false)
+      expect(user).to receive(:admin?).and_return(false)
+      expect(user).to receive(:organization).and_return(organization)
+      result = helper.dashboard_for(user)
+      expect(result).to eq('organization_submitted_dashboard')
+    end
+
+    it "returns 'organization_approved_dashboard'" do
+      organization = double("Organization", submitted?: false, approved?: true)
+      expect(user).to receive(:admin?).and_return(false)
+      allow(user).to receive(:organization).and_return(organization)
+      result = helper.dashboard_for(user)
+      expect(result).to eq('organization_approved_dashboard')
+    end
+
+    it "returns 'create_application_dashboard'" do
+      expect(user).to receive(:admin?).and_return(false)
+      allow(user).to receive(:organization).and_return(nil)
+      result = helper.dashboard_for(user)
+      expect(result).to eq('create_application_dashboard')
+    end
+  end
 end
