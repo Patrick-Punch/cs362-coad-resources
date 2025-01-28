@@ -11,8 +11,8 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe TicketsHelper, type: :helper do
-  describe "format phone number" do
-    
+  describe "format helper" do
+
     it "formats a valid US phone number" do
       expect(PhonyRails).to receive(:normalize_number).with("555-123-4567", country_code: 'US').and_return("+15551234567")
       result = helper.format_phone_number("555-123-4567")
