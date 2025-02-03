@@ -2,15 +2,15 @@ require 'rails_helper'
 
 RSpec.describe Region, type: :model do
 
-  let(:region) { Region.new(name: "'Murica") }
+  let(:region) { FactoryBot.build_stubbed(:region) }
 
   it "has a name" do
     expect(region).to respond_to(:name)
   end
 
   it "has a string representation that is its name" do
-    region.name = 'Mt. Hood'
-    region.to_s
+    region = FactoryBot.build(:region, name: 'Murica')
+    expect(region.to_s).to eq("Murica")
   end
 
   ## CARDINALITY
@@ -21,6 +21,7 @@ RSpec.describe Region, type: :model do
 
   ## VALIDATION
   describe "validation tests" do 
+    let(:region) { FactoryBot.build(:region) }
 
     it "validates presence of name" do 
       expect(region).to validate_presence_of(:name)
@@ -32,6 +33,8 @@ RSpec.describe Region, type: :model do
     end
 
     it "validates uniqueness of name" do 
+      FactoryBot.create(:region, name: 'Murica')
+      region = FactoryBot.build(:region, name: 'Murica')
       expect(region).to validate_uniqueness_of(:name).case_insensitive
     end
   end
@@ -45,7 +48,7 @@ RSpec.describe Region, type: :model do
     end
 
     it "converts to string" do
-      expect(region.to_s).to eq "'Murica"
+      expect(region.to_s).to eq "Murica"
     end
   end
 end
