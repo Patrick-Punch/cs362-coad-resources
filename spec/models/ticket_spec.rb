@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Ticket, type: :model do
 
-  let (:ticket) { Ticket.new(id: 123) }
+  let (:ticket) { Ticket.new }
 
   describe "attribute tests" do
     it "has a name" do
@@ -66,13 +66,11 @@ RSpec.describe Ticket, type: :model do
   ## MEMBER FUNCTION TESTS
   describe "member function tests" do
     it "should not be closed if open" do
-      expect(ticket.open?).not_to eq "closed" 
+      expect(ticket.open?).not_to eq "closed"
     end
 
     it "should be captured if it belongs to an organization" do
-      region = Region.create!(name: "region1")
-      resource = ResourceCategory.create!(name: "resource1")
-
+      #TODO replace with factory, test if I can do this without DB hit
       organization = Organization.create!(
         name: "organization1",
         email: "organization@hotmail.com",
@@ -82,54 +80,39 @@ RSpec.describe Ticket, type: :model do
         primary_name: "primary",
         secondary_name: "secondary",
       )
-      local_ticket = Ticket.create!(
-        name: "ticket",
-        phone: "+1-555-555-1212",
-        region_id: region.id,
-        resource_category_id: resource.id,
-        organization_id: organization.id
-      )
-      expect(local_ticket.captured?).to eq true
+
+      ticket = Ticket.new(organization_id: organization.id)
+
+      expect(ticket.captured?).to eq true
     end
 
-    it "converts to string" do
-      expect(ticket.to_s).to eq "Ticket 123"
+    it "is an id as a string" do
+      ticket.id = 123
+      expect(ticket.to_s).to eq "Ticket #{ticket.id}"
+    end
+
+    it "is empty if there's no id" do
+      expect(ticket.to_s).to eq "Ticket "
     end
   end
 
   describe "scope tests" do
 
-    it "scopes open tickets" do
-      region = Region.create!(name: "region1")
-      resource = ResourceCategory.create!(name: "resource1")
-
-      ticket = Ticket.create!(
-        name: "ticket",
-        phone: "+1-555-555-1212",
-        region_id: region.id,
-        resource_category_id: resource.id,
-        organization_id: nil,
+    it "should include open tickets in an open scope" do
+      ticket = create(
+        :ticket,
         closed: false
       )
-      expect(Ticket.closed).to_not include(ticket)
+
       expect(Ticket.open).to include(ticket)
+      expect(Ticket.closed).to_not include(ticket)
     end
 
-    it "scopes closed tickets" do
-      region = Region.create!(name: "region1")
-      resource = ResourceCategory.create!(name: "resource1")
-
-      ticket = Ticket.create!(
-        name: "ticket",
-        phone: "+1-555-555-1212",
-        region_id: region.id,
-        resource_category_id: resource.id,
+    it "include closed tickets in a closed scope" do
+      ticket = create(
+        :ticket,
         closed: true
       )
-
-      # How we look at scopes:
-      #Ticket.closed
-      #Ticket.open
 
       expect(Ticket.closed).to include(ticket)
       expect(Ticket.open).to_not include(ticket)
