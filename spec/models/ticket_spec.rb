@@ -70,20 +70,14 @@ RSpec.describe Ticket, type: :model do
     end
 
     it "should be captured if it belongs to an organization" do
-      #TODO replace with factory, test if I can do this without DB hit
-      organization = Organization.create!(
-        name: "organization1",
-        email: "organization@hotmail.com",
-        phone: "+1-555-555-5555",
-        secondary_phone: "+1-666-666-6666",
-        status: "approved",
-        primary_name: "primary",
-        secondary_name: "secondary",
-      )
-
+      organization = create(:organization)
       ticket = Ticket.new(organization_id: organization.id)
 
       expect(ticket.captured?).to eq true
+    end
+
+    it "should be not be captured if it doesn't belong to an organization" do
+      expect(ticket.captured?).to eq false
     end
 
     it "is an id as a string" do
