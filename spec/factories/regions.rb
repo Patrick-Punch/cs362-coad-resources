@@ -1,8 +1,7 @@
-FactoryBot.define do 
+FactoryBot.define do
     factory :region do
-        name { "Murica"}
-        #organization
+        name { "test_name"}
     end
 
 
-end 
+end
