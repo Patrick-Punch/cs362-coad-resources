@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Organization, "it should have certain attributes" , type: :model do
-
-  let(:org) { Organization.new(id: 123, name: 'Patrick', phone: '1111111111', primary_name: 'Patrick', secondary_name: 'punch') }
+  let(:org) { build(:organization) }
 
   it "has eight agreements" do
     expect(org).to respond_to(:agreement_one)
@@ -76,35 +75,35 @@ RSpec.describe Organization, "it should have certain attributes" , type: :model 
     it "has and belongs to many resource categories" do
       should have_and_belong_to_many(:resource_categories)
     end
-  end 
+  end
 
   ## VALIDATION TESTS
-  describe "validation tests" do 
+  describe "validation tests" do
 
-    ##Pesences of 
-    it "validates presence of email" do 
+    ##Pesences of
+    it "validates presence of email" do
       expect(org).to validate_presence_of(:email)
     end
-    it "validates presence of name" do 
+    it "validates presence of name" do
       expect(org).to validate_presence_of(:name)
     end
-    it "validates presence of phone" do 
+    it "validates presence of phone" do
       expect(org).to validate_presence_of(:phone)
     end
-    it "validates presence of status" do 
+    it "validates presence of status" do
       expect(org).to validate_presence_of(:status)
     end
-    it "validates presence of primary_name" do 
+    it "validates presence of primary_name" do
       expect(org).to validate_presence_of(:primary_name)
     end
-    it "validates presence of secondary_name" do 
+    it "validates presence of secondary_name" do
       expect(org).to validate_presence_of(:secondary_name)
     end
-    it "validates presence of secondary_phone" do 
+    it "validates presence of secondary_phone" do
       expect(org).to validate_presence_of(:secondary_phone)
     end
-    
-      #Length 
+
+      #Length
     it "validates email length" do
       expect(org).to validate_length_of(:email).is_at_most(255)
       expect(org).to validate_length_of(:email).is_at_least(1)
@@ -117,25 +116,26 @@ RSpec.describe Organization, "it should have certain attributes" , type: :model 
       expect(org).to validate_length_of(:description).is_at_most(1020)
     end
 
-      #email format 
+      #email format
       specify {
         should allow_values('pppunch@hotmail.com','aksdjhf3h423kha@osu.edu').for(:email)
       }
-    
-    #uniqueness 
-    it "validates uniqueness of email" do 
+
+    #uniqueness
+    it "validates uniqueness of email" do
       expect(org).to validate_uniqueness_of(:email).case_insensitive
     end
-    it "validates uniqueness of name" do 
+    it "validates uniqueness of name" do
       expect(org).to validate_uniqueness_of(:name).case_insensitive
     end
-  end 
+  end
 
 ## MEMBER FUNCTION TESTS
 describe "member function tests" do
-  let(:organization) { Organization.new(name: 'example', email: 'example@hotmail.com') }
+  let (:organization) { create(:organization) }
+
   it "returns the organization's name when to_s is called" do
-    expect(organization.to_s).to eq 'example'
+    expect(organization.to_s).to eq organization.name
   end
   it "sets the status to approved" do
     org.approve
@@ -148,18 +148,13 @@ describe "member function tests" do
   end
 
   it "sets the default status to submitted when no status is provided" do
-    organization = Organization.new(name: 'Example Org', email: 'example@hotmail.com')
-    expect(organization.status).to eq 'submitted'
+    expect(org.status).to eq 'submitted'
   end
 
   it "does not override an already set status" do
-    organization = Organization.new(name: 'Example Org', email: 'example@hotmail.com', status: :approved)
+    organization = create(:organization, status: 'approved')
     expect(organization.status).to eq 'approved'
   end
-
-end 
-
-describe "scope tests" do
 
 end
 end
