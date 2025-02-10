@@ -33,6 +33,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "member function tests" do
+    let(:user) { build(:user, email: 'example@hotmail.com') }
     it "should return an email on to_s" do
       expect(user.to_s).to eq 'example@hotmail.com'
     end
