@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ResourceCategory, type: :model do
 
-  let(:res_cat) { ResourceCategory.new(name: "test_name") }
+  let(:res_cat) { build(:resource_category) }
   let(:active_res_cat) {ResourceCategory.create!(active: true, name: "test_name1")}
   let(:inactive_res_cat) {ResourceCategory.create!(active: false, name: "test_name2")}
 
