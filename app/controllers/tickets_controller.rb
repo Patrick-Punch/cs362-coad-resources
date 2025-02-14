@@ -1,3 +1,15 @@
+# static_pages_controller.rb
+# tickets_controller.rb
+# dashboard_controller.rb
+
+#        tickets POST   /tickets(.:format)                 tickets#create
+#     new_ticket GET    /tickets/new(.:format)             tickets#new
+#         ticket GET    /tickets/:id(.:format)             tickets#show
+# capture_ticket POST   /tickets/:id/capture(.:format)     tickets#capture
+# release_ticket POST   /tickets/:id/release(.:format)     tickets#release
+#   close_ticket PATCH  /tickets/:id/close(.:format)       tickets#close
+#                DELETE /tickets/:id(.:format)             tickets#destroy
+
 class TicketsController < ApplicationController
   include TicketsHelper
 
