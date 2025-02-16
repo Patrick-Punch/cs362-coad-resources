@@ -1,3 +1,4 @@
+# dashboard GET    /dashboard(.:format     dashboard#index
 class DashboardController < ApplicationController
   include Pagy::Backend
 
