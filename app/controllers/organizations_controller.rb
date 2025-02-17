@@ -1,5 +1,6 @@
 class OrganizationsController < ApplicationController
 
+
   before_action :authenticate_user!
   before_action :authenticate_admin, only: [:approve, :reject]
   before_action :verify_unapproved, only: [:new, :create]
@@ -65,6 +66,8 @@ class OrganizationsController < ApplicationController
       render organization_path(id: @organization.id)
     end
   end
+
+
 
   private
 
