@@ -12,7 +12,7 @@ require 'rails_helper'
 RSpec.describe RegionsController, type: :controller do
 
   describe 'as a logged out user' do
-    let(:user) { FactoryBot.create(:user) }
+    let(:user) { FactoryBot.create(:user) } 
 
     it { expect(get(:index)).to redirect_to new_user_session_path }
     it {
@@ -46,4 +46,118 @@ RSpec.describe RegionsController, type: :controller do
     it { expect(get(:new)).to be_successful }
   end
 
+  ### get #edit
+  describe 'as an admin' do
+    let(:user) { FactoryBot.create(:user, :admin) }
+    let(:region) { FactoryBot.create(:region) }
+
+    before(:each) { sign_in user }
+
+    it { expect(get(:edit, params: { id: region.id })).to be_successful }
+  end
+
+  describe 'as a logged in user' do
+    let(:user) { FactoryBot.create(:user) }
+    let(:region) { FactoryBot.create(:region) }
+
+    before(:each) { sign_in user }
+
+    it { expect(get(:edit, params: { id: region.id })).to redirect_to dashboard_path }
+  end
+
+  describe 'as a logged out user' do
+    let(:region) { FactoryBot.create(:region) }
+
+    it { expect(get(:edit, params: { id: region.id })).to redirect_to new_user_session_path }
+  end
+
+
+  ## Get #show
+  describe 'as an admin' do
+    let(:user) { FactoryBot.create(:user, :admin) }
+    let(:region) { FactoryBot.create(:region) }
+
+    before(:each) { sign_in user }
+
+    it { expect(get(:show, params: { id: region.id })).to be_successful }
+  end
+
+  describe 'as a logged in user' do
+    let(:user) { FactoryBot.create(:user) }
+    let(:region) { FactoryBot.create(:region) }
+
+    before(:each) { sign_in user }
+
+    it { expect(get(:show, params: { id: region.id })).to redirect_to dashboard_path }
+  end
+
+  describe 'as a logged out user' do
+    let(:region) { FactoryBot.create(:region) }
+
+    it { expect(get(:show, params: { id: region.id })).to redirect_to new_user_session_path }
+  end
+
+
+  ## PATCH/PUT #update
+
+  describe 'as an admin' do
+    let(:user) { FactoryBot.create(:user, :admin) }
+    let(:region) { FactoryBot.create(:region) }
+
+    before(:each) { sign_in user }
+
+    it 'updates the region' do
+      patch(:update, params: { id: region.id, region: { name: 'Updated Name' } })
+      region.reload
+      expect(region.name).to eq('Updated Name')
+      expect(response).to redirect_to region_path(region)
+    end
+
+    it 'renders the edit page if the update fails' do
+      patch(:update, params: { id: region.id, region: { name: '' } })
+      expect(response).to render_template('edit')
+    end
+  end
+
+  describe 'as a logged in user' do
+    let(:user) { FactoryBot.create(:user) }
+    let(:region) { FactoryBot.create(:region) }
+
+    before(:each) { sign_in user }
+
+    it { expect(patch(:update, params: { id: region.id, region: { name: 'Updated Name' } })).to redirect_to dashboard_path }
+  end
+
+  describe 'as a logged out user' do
+    let(:region) { FactoryBot.create(:region) }
+
+    it { expect(patch(:update, params: { id: region.id, region: { name: 'Updated Name' } })).to redirect_to new_user_session_path }
+  end
+  ####DELETE?DESTROY
+
+  describe 'as a logged in user' do
+    let(:user) { FactoryBot.create(:user) }
+    let!(:region) { FactoryBot.create(:region) }
+
+    before(:each) { sign_in user }
+
+    it { expect(delete(:destroy, params: { id: region.id })).to redirect_to dashboard_path }
+  end
+
+  describe 'as a logged out user' do
+    let!(:region) { FactoryBot.create(:region) }
+
+    it { expect(delete(:destroy, params: { id: region.id })).to redirect_to new_user_session_path }
+  end
+
+  describe 'as an admin' do
+  let(:user) { FactoryBot.create(:user, :admin) }
+
+  before(:each) { sign_in user }
+
+    it 'does not create a region with invalid parameters' do
+      post(:create, params: { region: { name: '' } })
+      expect(response).to render_template('new')
+    end
+  end
 end
