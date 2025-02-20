@@ -60,7 +60,7 @@ RSpec.describe ResourceCategory, type: :model do
       end
 
       it "returns it's name when it's a string" do
-        expect(res_cat.to_s).to eq "test_name"
+        expect(res_cat.to_s).to eq res_cat.name
       end
 
     end

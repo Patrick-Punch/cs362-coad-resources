@@ -1,15 +1,3 @@
-# static_pages_controller.rb
-# tickets_controller.rb
-# dashboard_controller.rb
-
-#        tickets POST   /tickets(.:format)                 tickets#create
-#     new_ticket GET    /tickets/new(.:format)             tickets#new
-#         ticket GET    /tickets/:id(.:format)             tickets#show
-# capture_ticket POST   /tickets/:id/capture(.:format)     tickets#capture
-# release_ticket POST   /tickets/:id/release(.:format)     tickets#release
-#   close_ticket PATCH  /tickets/:id/close(.:format)       tickets#close
-#                DELETE /tickets/:id(.:format)             tickets#destroy
-
 class TicketsController < ApplicationController
   include TicketsHelper
 
@@ -41,7 +29,6 @@ class TicketsController < ApplicationController
 
   def capture
     return redirect_to dashboard_path unless current_user&.organization&.approved?
-
     if TicketService.capture_ticket(params[:id], current_user) == :ok
       redirect_to dashboard_path << '#tickets:open'
     else
@@ -51,7 +38,6 @@ class TicketsController < ApplicationController
 
   def release
     return redirect_to dashboard_path unless current_user&.organization&.approved?
-
     if TicketService.release_ticket(params[:id], current_user) == :ok
       if current_user.admin?
         redirect_to dashboard_path << '#tickets:captured'
