@@ -13,6 +13,7 @@ RSpec.describe RegionsController, type: :controller do
 
   describe 'as a logged out user' do
     let(:user) { FactoryBot.create(:user) } 
+    let(:region) { FactoryBot.create(:region) }
 
     it { expect(get(:index)).to redirect_to new_user_session_path }
     it {
@@ -20,10 +21,16 @@ RSpec.describe RegionsController, type: :controller do
       expect(response).to redirect_to new_user_session_path
     }
     it { expect(get(:new)).to redirect_to new_user_session_path }
+    it { expect(get(:edit, params: { id: region.id })).to redirect_to new_user_session_path }
+    it { expect(get(:show, params: { id: region.id })).to redirect_to new_user_session_path }
+
+    it { expect(patch(:update, params: { id: region.id, region: { name: 'Updated Name' } })).to redirect_to new_user_session_path }
+    it { expect(delete(:destroy, params: { id: region.id })).to redirect_to new_user_session_path }
   end
 
   describe 'as a logged in user' do
     let(:user) { FactoryBot.create(:user) }
+    let(:region) { FactoryBot.create(:region) }
     before(:each) { sign_in user }
 
     it { expect(get(:index)).to redirect_to dashboard_path }
@@ -32,10 +39,14 @@ RSpec.describe RegionsController, type: :controller do
       expect(response).to redirect_to dashboard_path
     }
     it { expect(get(:new)).to redirect_to dashboard_path }
+    it { expect(get(:edit, params: { id: region.id })).to redirect_to dashboard_path }
+    it { expect(patch(:update, params: { id: region.id, region: { name: 'Updated Name' } })).to redirect_to dashboard_path }
+    it { expect(delete(:destroy, params: { id: region.id })).to redirect_to dashboard_path }
   end
 
   describe 'as an admin' do
     let(:user) { FactoryBot.create(:user, :admin) }
+    let(:region) { FactoryBot.create(:region) }
     before(:each) { sign_in user }
 
     it { expect(get(:index)).to be_successful }
@@ -44,67 +55,13 @@ RSpec.describe RegionsController, type: :controller do
       expect(response).to redirect_to regions_path
     }
     it { expect(get(:new)).to be_successful }
-  end
+    it { expect(get(:edit, params: { id: region.id })).to be_successful } 
+    it { expect(get(:show, params: { id: region.id })).to be_successful } 
 
-  ### get #edit
-  describe 'as an admin' do
-    let(:user) { FactoryBot.create(:user, :admin) }
-    let(:region) { FactoryBot.create(:region) }
-
-    before(:each) { sign_in user }
-
-    it { expect(get(:edit, params: { id: region.id })).to be_successful }
-  end
-
-  describe 'as a logged in user' do
-    let(:user) { FactoryBot.create(:user) }
-    let(:region) { FactoryBot.create(:region) }
-
-    before(:each) { sign_in user }
-
-    it { expect(get(:edit, params: { id: region.id })).to redirect_to dashboard_path }
-  end
-
-  describe 'as a logged out user' do
-    let(:region) { FactoryBot.create(:region) }
-
-    it { expect(get(:edit, params: { id: region.id })).to redirect_to new_user_session_path }
-  end
-
-
-  ## Get #show
-  describe 'as an admin' do
-    let(:user) { FactoryBot.create(:user, :admin) }
-    let(:region) { FactoryBot.create(:region) }
-
-    before(:each) { sign_in user }
-
-    it { expect(get(:show, params: { id: region.id })).to be_successful }
-  end
-
-  describe 'as a logged in user' do
-    let(:user) { FactoryBot.create(:user) }
-    let(:region) { FactoryBot.create(:region) }
-
-    before(:each) { sign_in user }
-
-    it { expect(get(:show, params: { id: region.id })).to redirect_to dashboard_path }
-  end
-
-  describe 'as a logged out user' do
-    let(:region) { FactoryBot.create(:region) }
-
-    it { expect(get(:show, params: { id: region.id })).to redirect_to new_user_session_path }
-  end
-
-
-  ## PATCH/PUT #update
-
-  describe 'as an admin' do
-    let(:user) { FactoryBot.create(:user, :admin) }
-    let(:region) { FactoryBot.create(:region) }
-
-    before(:each) { sign_in user }
+    it 'does not create a region with invalid parameters' do
+      post(:create, params: { region: { name: '' } })
+      expect(response).to render_template('new')
+    end
 
     it 'updates the region' do
       patch(:update, params: { id: region.id, region: { name: 'Updated Name' } })
@@ -117,47 +74,13 @@ RSpec.describe RegionsController, type: :controller do
       patch(:update, params: { id: region.id, region: { name: '' } })
       expect(response).to render_template('edit')
     end
-  end
 
-  describe 'as a logged in user' do
-    let(:user) { FactoryBot.create(:user) }
-    let(:region) { FactoryBot.create(:region) }
+    it 'deletes the region and reassigns associated tickets to Unspecified' do
+      unspecified_region = Region.find_by(name: 'Unspecified')
+      delete(:destroy, params: { id: region.id })
 
-    before(:each) { sign_in user }
-
-    it { expect(patch(:update, params: { id: region.id, region: { name: 'Updated Name' } })).to redirect_to dashboard_path }
-  end
-
-  describe 'as a logged out user' do
-    let(:region) { FactoryBot.create(:region) }
-
-    it { expect(patch(:update, params: { id: region.id, region: { name: 'Updated Name' } })).to redirect_to new_user_session_path }
-  end
-  ####DELETE?DESTROY
-
-  describe 'as a logged in user' do
-    let(:user) { FactoryBot.create(:user) }
-    let!(:region) { FactoryBot.create(:region) }
-
-    before(:each) { sign_in user }
-
-    it { expect(delete(:destroy, params: { id: region.id })).to redirect_to dashboard_path }
-  end
-
-  describe 'as a logged out user' do
-    let!(:region) { FactoryBot.create(:region) }
-
-    it { expect(delete(:destroy, params: { id: region.id })).to redirect_to new_user_session_path }
-  end
-
-  describe 'as an admin' do
-  let(:user) { FactoryBot.create(:user, :admin) }
-
-  before(:each) { sign_in user }
-
-    it 'does not create a region with invalid parameters' do
-      post(:create, params: { region: { name: '' } })
-      expect(response).to render_template('new')
+      expect(flash[:notice]).to eq("Region #{region.name} was deleted. Associated tickets now belong to the 'Unspecified' region.")
+      expect(response).to redirect_to(regions_path)
     end
   end
 end
