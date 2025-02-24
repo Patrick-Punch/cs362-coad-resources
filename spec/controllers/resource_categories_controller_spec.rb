@@ -96,11 +96,10 @@ RSpec.describe ResourceCategoriesController, type: :controller do
         expect(response).to redirect_to(resource_category)
       end
 
-      it 'fails to activate' do # Not working
-        allow(resource_category).to receive(:activate).and_return(false)
-        patch :activate, params: { id: resource_category.id } 
-        expect(response).to redirect_to(resource_category)
-        # expect(flash[:alert]).to eq('There was a problem activating the category.') # returns nil?
+      it 'fails to activate' do
+        allow_any_instance_of(ResourceCategory).to receive(:activate).and_return(false)
+        patch :activate, params: { id: resource_category.id }
+        expect(flash[:alert]).to eq('There was a problem activating the category.')
       end
     end
 
@@ -111,11 +110,10 @@ RSpec.describe ResourceCategoriesController, type: :controller do
         expect(response).to redirect_to(resource_category)
       end
 
-      it 'fails to deactivate' do # Not working
-        allow(resource_category).to receive(:deactivate).and_return(false)
-        patch :deactivate, params: { id: resource_category.id } 
-        expect(response).to redirect_to(resource_category)
-        # expect(flash[:alert]).to eq('There was a problem deactivating the category.') # returns nil?
+      it 'fails to deactivate' do
+        allow_any_instance_of(ResourceCategory).to receive(:deactivate).and_return(false)
+        patch :deactivate, params: { id: resource_category.id }
+        expect(flash[:alert]).to eq('There was a problem deactivating the category.') # returns nil?
       end
     end
 
