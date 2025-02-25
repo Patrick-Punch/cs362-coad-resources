@@ -1,170 +1,956 @@
 => Booting Puma
 => Rails 5.2.4.6 application starting in development 
 => Run `rails server -h` for more startup options
-[95] Puma starting in cluster mode...
-[95] * Version 3.12.6 (ruby 2.7.2-p137), codename: Llamas in Pajamas
-[95] * Min threads: 5, max threads: 5
-[95] * Environment: development
-[95] * Process workers: 2
-[95] * Preloading application
-[95] * Listening on tcp://0.0.0.0:3000
-[95] Use Ctrl-C to stop
-[95] - Worker 0 (pid: 129) booted, phase: 0
-[95] - Worker 1 (pid: 131) booted, phase: 0
-Started GET "/regions" for 172.18.0.1 at 2025-02-24 22:52:30 +0000
+[61] Puma starting in cluster mode...
+[61] * Version 3.12.6 (ruby 2.7.2-p137), codename: Llamas in Pajamas
+[61] * Min threads: 5, max threads: 5
+[61] * Environment: development
+[61] * Process workers: 2
+[61] * Preloading application
+[61] * Listening on tcp://0.0.0.0:3000
+[61] Use Ctrl-C to stop
+[61] - Worker 0 (pid: 95) booted, phase: 0
+[61] - Worker 1 (pid: 97) booted, phase: 0
+Started GET "/" for 172.18.0.1 at 2025-02-25 03:47:34 +0000
 Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
-Processing by RegionsController#index as HTML
-  Rendering regions/index.html.haml within layouts/application
-  [1m[36mRegion Load (0.4ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
-  ↳ app/views/regions/index.html.haml:11
-  Rendered regions/index.html.haml within layouts/application (31.7ms)
-  Rendered layouts/_nav.html.haml (14.3ms)
-  Rendered layouts/_flashes.html.haml (7.2ms)
-  Rendered layouts/_footer.html.haml (3.3ms)
-Completed 200 OK in 225ms (Views: 211.4ms | ActiveRecord: 1.2ms)
-
-
-Started GET "/" for 172.18.0.1 at 2025-02-24 22:52:53 +0000
-Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 Processing by StaticPagesController#index as HTML
   Rendering static_pages/index.html.haml within layouts/application
-  Rendered static_pages/index.html.haml within layouts/application (14.6ms)
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/index.html.haml within layouts/application (8.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   ↳ app/views/layouts/_nav.html.haml:7
-  Rendered layouts/_nav.html.haml (45.1ms)
-  Rendered layouts/_flashes.html.haml (7.2ms)
-  Rendered layouts/_footer.html.haml (3.4ms)
-Completed 200 OK in 208ms (Views: 200.5ms | ActiveRecord: 1.5ms)
+  Rendered layouts/_nav.html.haml (35.1ms)
+  Rendered layouts/_flashes.html.haml (4.5ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 145ms (Views: 139.9ms | ActiveRecord: 1.1ms)
 
 
-Started GET "/" for 172.18.0.1 at 2025-02-24 22:58:17 +0000
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 03:47:40 +0000
 Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by StaticPagesController#index as HTML
-  Rendering static_pages/index.html.haml within layouts/application
-  Rendered static_pages/index.html.haml within layouts/application (6.5ms)
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/views/layouts/_nav.html.haml:7
-  Rendered layouts/_nav.html.haml (20.1ms)
-  Rendered layouts/_flashes.html.haml (7.4ms)
-  Rendered layouts/_footer.html.haml (3.5ms)
-Completed 200 OK in 92ms (Views: 88.6ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/organizations" for 172.18.0.1 at 2025-02-24 22:58:20 +0000
-Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
-Processing by OrganizationsController#index as HTML
-  Rendering organizations/index.html.haml within layouts/application
-  [1m[36mOrganization Load (2.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."name" ASC[0m
-  ↳ app/views/organizations/index.html.haml:24
-  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" WHERE "organizations"."status" = ? ORDER BY "organizations"."name" ASC[0m  [["status", 0]]
-  ↳ app/views/organizations/index.html.haml:30
-  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" WHERE "organizations"."status" = ? ORDER BY "organizations"."name" ASC[0m  [["status", 1]]
-  ↳ app/views/organizations/index.html.haml:36
-  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" WHERE "organizations"."status" = ? ORDER BY "organizations"."name" ASC[0m  [["status", 2]]
-  ↳ app/views/organizations/index.html.haml:49
-  Rendered organizations/index.html.haml within layouts/application (116.6ms)
-  Rendered layouts/_nav.html.haml (13.6ms)
-  Rendered layouts/_flashes.html.haml (6.9ms)
-  Rendered layouts/_footer.html.haml (3.3ms)
-Completed 200 OK in 257ms (Views: 209.0ms | ActiveRecord: 4.1ms)
-
-
-Started GET "/regions" for 172.18.0.1 at 2025-02-24 22:58:21 +0000
-Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
-Processing by RegionsController#index as HTML
-  Rendering regions/index.html.haml within layouts/application
-  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
-  ↳ app/views/regions/index.html.haml:11
-  Rendered regions/index.html.haml within layouts/application (24.4ms)
-  Rendered layouts/_nav.html.haml (13.3ms)
-  Rendered layouts/_flashes.html.haml (6.9ms)
-  Rendered layouts/_footer.html.haml (3.3ms)
-Completed 200 OK in 99ms (Views: 90.8ms | ActiveRecord: 1.1ms)
-
-
-Started GET "/regions/new" for 172.18.0.1 at 2025-02-24 22:58:22 +0000
-Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
-Processing by RegionsController#new as HTML
-  Rendering regions/new.html.haml within layouts/application
-  Rendered regions/new.html.haml within layouts/application (25.7ms)
-  Rendered layouts/_nav.html.haml (13.3ms)
-  Rendered layouts/_flashes.html.haml (7.1ms)
-  Rendered layouts/_footer.html.haml (3.5ms)
-Completed 200 OK in 97ms (Views: 93.6ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/regions/5" for 172.18.0.1 at 2025-02-24 22:58:25 +0000
-Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
-Processing by RegionsController#show as HTML
-  Parameters: {"id"=>"5"}
-  [1m[36mRegion Load (0.4ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
-  ↳ app/controllers/regions_controller.rb:11
+Processing by DashboardController#index as HTML
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:16
 Creating scope :open. Overwriting existing method Ticket.open.
-  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."region_id" = ?[0m  [["region_id", 5]]
-  ↳ app/controllers/regions_controller.rb:11
-  Rendering regions/show.html.haml within layouts/application
-  Rendered regions/show.html.haml within layouts/application (9.5ms)
-  Rendered layouts/_nav.html.haml (13.5ms)
-  Rendered layouts/_flashes.html.haml (7.0ms)
-  Rendered layouts/_footer.html.haml (3.3ms)
-Completed 200 OK in 124ms (Views: 82.6ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (75.8ms)
+  Rendered dashboard/_organization_approved_dashboard.html.erb (78.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (94.9ms)
+  Rendered layouts/_nav.html.haml (28.0ms)
+  Rendered layouts/_flashes.html.haml (11.1ms)
+  Rendered layouts/_footer.html.haml (4.2ms)
+Completed 200 OK in 262ms (Views: 212.7ms | ActiveRecord: 4.4ms)
 
 
-Started GET "/regions/new" for 172.18.0.1 at 2025-02-24 22:58:28 +0000
+Started GET "/tickets/5" for 172.18.0.1 at 2025-02-25 03:48:35 +0000
 Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
-Processing by RegionsController#new as HTML
-  Rendering regions/new.html.haml within layouts/application
-  Rendered regions/new.html.haml within layouts/application (11.3ms)
-  Rendered layouts/_nav.html.haml (13.4ms)
-  Rendered layouts/_flashes.html.haml (7.1ms)
-  Rendered layouts/_footer.html.haml (3.4ms)
-Completed 200 OK in 101ms (Views: 93.1ms | ActiveRecord: 0.0ms)
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:27
+  Rendering tickets/show.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:30
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:32
+  Rendered tickets/show.html.haml within layouts/application (18.8ms)
+  Rendered layouts/_nav.html.haml (8.2ms)
+  Rendered layouts/_flashes.html.haml (4.2ms)
+  Rendered layouts/_footer.html.haml (2.1ms)
+Completed 200 OK in 75ms (Views: 63.8ms | ActiveRecord: 1.0ms)
 
 
-Started POST "/regions" for 172.18.0.1 at 2025-02-24 22:58:34 +0000
+Started GET "/tickets/8" for 172.18.0.1 at 2025-02-25 03:48:42 +0000
 Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:27
+  Rendering tickets/show.html.haml within layouts/application
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:30
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:32
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:40
+  Rendered tickets/show.html.haml within layouts/application (24.6ms)
+  Rendered layouts/_nav.html.haml (8.6ms)
+  Rendered layouts/_flashes.html.haml (4.3ms)
+  Rendered layouts/_footer.html.haml (2.0ms)
+Completed 200 OK in 87ms (Views: 73.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 172.18.0.1 at 2025-02-25 03:50:07 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.haml within layouts/application
+  Rendered static_pages/index.html.haml within layouts/application (8.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.haml:7
+  Rendered layouts/_nav.html.haml (25.4ms)
+  Rendered layouts/_flashes.html.haml (4.1ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 70ms (Views: 67.6ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/logout" for 172.18.0.1 at 2025-02-25 03:50:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GEZgXHX9p8LZOvW42IWW/yvVHUtNRMwei2nWmCJlARnRiI+eWhpaTklI6i6FqcMl78zjulMN7gpudYWe3OlMdg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
-Processing by RegionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q+VBK4aVRaoI2zY5r7q6J34XuMGRg3Te+t+obErwboQvWzhWOYX1OG6YkhtsRomO8spEeIF9mwP2X5rUHKfZGA==", "region"=>{"name"=>"Flaming Hot Sauce"}, "commit"=>"Add Region"}
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  ↳ app/controllers/regions_controller.rb:20
-  [1m[36mRegion Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE LOWER("regions"."name") = LOWER(?) LIMIT ?[0m  [["name", "Flaming Hot Sauce"], ["LIMIT", 1]]
-  ↳ app/controllers/regions_controller.rb:20
-  [1m[36mRegion Create (1.4ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Flaming Hot Sauce"], ["created_at", "2025-02-24 22:58:34.101262"], ["updated_at", "2025-02-24 22:58:34.101262"]]
-  ↳ app/controllers/regions_controller.rb:20
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 172.18.0.1 at 2025-02-25 03:50:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.haml within layouts/application
+  Rendered static_pages/index.html.haml within layouts/application (3.6ms)
+  Rendered layouts/_nav.html.haml (8.4ms)
+  Rendered layouts/_flashes.html.haml (4.1ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.18.0.1 at 2025-02-25 03:50:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.haml within layouts/application
+  Rendered users/sessions/new.html.haml within layouts/application (23.6ms)
+  Rendered layouts/_nav.html.haml (23.7ms)
+  Rendered layouts/_flashes.html.haml (4.6ms)
+  Rendered layouts/_footer.html.haml (2.1ms)
+Completed 200 OK in 99ms (Views: 95.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 172.18.0.1 at 2025-02-25 03:50:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yz4KR8zKVGOL9DN0Y7s/brvGRjueaZOUpuk6lon6fonXVTX9VnJZOu07iPZbvSOcJh/ZpOU9pIJgFM5Wxn3A7w==", "user"=>{"email"=>"cozzocrt@oregonstate.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "cozzocrt@oregonstate.edu"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 143ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 03:50:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Processing by DashboardController#index as HTML
+Creating scope :open. Overwriting existing method Ticket.open.
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (69.9ms)
+  Rendered dashboard/_admin_dashboard.html.haml (73.8ms)
+  Rendered dashboard/index.html.haml within layouts/application (78.1ms)
+  Rendered layouts/_nav.html.haml (8.3ms)
+  Rendered layouts/_flashes.html.haml (4.2ms)
+  Rendered layouts/_footer.html.haml (2.0ms)
+Completed 200 OK in 130ms (Views: 118.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 03:50:21 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Processing by DashboardController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (45.2ms)
+  Rendered dashboard/_admin_dashboard.html.haml (51.1ms)
+  Rendered dashboard/index.html.haml within layouts/application (58.4ms)
+  Rendered layouts/_nav.html.haml (8.0ms)
+  Rendered layouts/_flashes.html.haml (4.1ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 112ms (Views: 103.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tickets/8" for 172.18.0.1 at 2025-02-25 03:50:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:27
+  Rendering tickets/show.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:30
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:32
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:40
+  Rendered tickets/show.html.haml within layouts/application (41.7ms)
+  Rendered layouts/_nav.html.haml (8.3ms)
+  Rendered layouts/_flashes.html.haml (4.3ms)
+  Rendered layouts/_footer.html.haml (2.1ms)
+Completed 200 OK in 119ms (Views: 95.2ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/tickets/8/close" for 172.18.0.1 at 2025-02-25 03:50:50 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TicketsController#close as HTML
+  Parameters: {"authenticity_token"=>"r0XYGgBNnHkwjdEnvrIAWeQMjHqjWDgKEQxljQtJV34WTXomWaio/M3XWaaWmiu44DscG1CWNNgX4y4F4iYJCw==", "id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:53
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/ticket_service.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/ticket_service.rb:29
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/ticket_service.rb:29
+  [1m[36mResourceCategory Load (9.3ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/ticket_service.rb:29
+  [1m[36mTicket Update (1.1ms)[0m  [1m[33mUPDATE "tickets" SET "closed" = ?, "closed_at" = ?, "updated_at" = ? WHERE "tickets"."id" = ?[0m  [["closed", 1], ["closed_at", "2025-02-25 08:00:00"], ["updated_at", "2025-02-25 03:50:50.922311"], ["id", 8]]
+  ↳ app/services/ticket_service.rb:29
   [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
-  ↳ app/controllers/regions_controller.rb:20
-Redirected to http://localhost:3000/regions
-Completed 302 Found in 20ms (ActiveRecord: 3.8ms)
+  ↳ app/services/ticket_service.rb:29
+Redirected to http://localhost:3000/dashboard#tickets:open
+Completed 302 Found in 44ms (ActiveRecord: 13.2ms)
 
 
-Started GET "/regions" for 172.18.0.1 at 2025-02-24 22:58:34 +0000
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 03:50:50 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Processing by DashboardController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (32.2ms)
+  Rendered dashboard/_admin_dashboard.html.haml (36.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (41.2ms)
+  Rendered layouts/_nav.html.haml (8.0ms)
+  Rendered layouts/_flashes.html.haml (4.1ms)
+  Rendered layouts/_footer.html.haml (2.0ms)
+Completed 200 OK in 87ms (Views: 82.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tickets/7" for 172.18.0.1 at 2025-02-25 03:50:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:27
+  Rendering tickets/show.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:30
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:32
+  Rendered tickets/show.html.haml within layouts/application (22.2ms)
+  Rendered layouts/_nav.html.haml (8.9ms)
+  Rendered layouts/_flashes.html.haml (5.5ms)
+  Rendered layouts/_footer.html.haml (4.2ms)
+Completed 200 OK in 88ms (Views: 76.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 03:51:58 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Processing by DashboardController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (39.8ms)
+  Rendered dashboard/_admin_dashboard.html.haml (45.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (52.5ms)
+  Rendered layouts/_nav.html.haml (7.9ms)
+  Rendered layouts/_flashes.html.haml (4.1ms)
+  Rendered layouts/_footer.html.haml (2.0ms)
+Completed 200 OK in 104ms (Views: 97.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 172.18.0.1 at 2025-02-25 03:58:45 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.haml within layouts/application
+  Rendered static_pages/index.html.haml within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.haml:7
+  Rendered layouts/_nav.html.haml (26.6ms)
+  Rendered layouts/_flashes.html.haml (4.2ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 66ms (Views: 63.4ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/logout" for 172.18.0.1 at 2025-02-25 03:58:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UB0CyM7GLlsEFrj4mQ5fZDfvU/Dxt8SOwbwHBeopeQPpFaD0lyMa3vlMMHmxJnSFM9jDkQJ5yFzHU0yNA0Yndg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 172.18.0.1 at 2025-02-25 03:58:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.haml within layouts/application
+  Rendered static_pages/index.html.haml within layouts/application (4.5ms)
+  Rendered layouts/_nav.html.haml (8.7ms)
+  Rendered layouts/_flashes.html.haml (8.5ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 59ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.18.0.1 at 2025-02-25 03:58:48 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.haml within layouts/application
+  Rendered users/sessions/new.html.haml within layouts/application (14.1ms)
+  Rendered layouts/_nav.html.haml (9.6ms)
+  Rendered layouts/_flashes.html.haml (4.7ms)
+  Rendered layouts/_footer.html.haml (2.2ms)
+Completed 200 OK in 76ms (Views: 73.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 172.18.0.1 at 2025-02-25 03:58:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o76ldDAperIqiMsgX2mnod+YsjZ1RBByOxKdD2ijM0lB5YGwNzh8uDPFxwzIkKMYCwRt9WpGiardOkpsWnb3xQ==", "user"=>{"email"=>"cozzocrt@oregonstate.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "cozzocrt@oregonstate.edu"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 140ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 03:58:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Processing by DashboardController#index as HTML
+Creating scope :open. Overwriting existing method Ticket.open.
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (75.6ms)
+  Rendered dashboard/_admin_dashboard.html.haml (79.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (83.6ms)
+  Rendered layouts/_nav.html.haml (8.2ms)
+  Rendered layouts/_flashes.html.haml (4.0ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 136ms (Views: 123.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/tickets/8" for 172.18.0.1 at 2025-02-25 03:58:55 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:27
+  Rendering tickets/show.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:30
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:32
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:40
+  Rendered tickets/show.html.haml within layouts/application (39.8ms)
+  Rendered layouts/_nav.html.haml (13.7ms)
+  Rendered layouts/_flashes.html.haml (4.4ms)
+  Rendered layouts/_footer.html.haml (2.1ms)
+Completed 200 OK in 113ms (Views: 89.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2025-02-25 03:58:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.haml within layouts/application
+  Rendered static_pages/index.html.haml within layouts/application (5.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.haml:7
+  Rendered layouts/_nav.html.haml (15.3ms)
+  Rendered layouts/_flashes.html.haml (5.2ms)
+  Rendered layouts/_footer.html.haml (2.4ms)
+Completed 200 OK in 71ms (Views: 67.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 03:59:30 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Processing by DashboardController#index as HTML
+Creating scope :open. Overwriting existing method Ticket.open.
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.3ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (1.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (126.1ms)
+  Rendered dashboard/_admin_dashboard.html.haml (130.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (134.6ms)
+  Rendered layouts/_nav.html.haml (7.7ms)
+  Rendered layouts/_flashes.html.haml (4.0ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 208ms (Views: 185.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/tickets/8" for 172.18.0.1 at 2025-02-25 03:59:40 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:27
+  Rendering tickets/show.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:30
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:32
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:40
+  Rendered tickets/show.html.haml within layouts/application (38.7ms)
+  Rendered layouts/_nav.html.haml (8.0ms)
+  Rendered layouts/_flashes.html.haml (4.1ms)
+  Rendered layouts/_footer.html.haml (2.0ms)
+Completed 200 OK in 105ms (Views: 82.5ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/tickets/8/release" for 172.18.0.1 at 2025-02-25 03:59:50 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TicketsController#release as HTML
+  Parameters: {"authenticity_token"=>"H2w0V0k423RNpr2wrC0K+E3a5C0asjUTycLPNKoIkuy9udW134n1ujD5CUGTkVXoD1QcDBpfpEdM4MBdXxhPQQ==", "id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:40
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 03:59:50 +0000
 Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
-Processing by RegionsController#index as HTML
-  Rendering regions/index.html.haml within layouts/application
+Processing by DashboardController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
   [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
-  ↳ app/views/regions/index.html.haml:11
-  Rendered regions/index.html.haml within layouts/application (12.5ms)
-  Rendered layouts/_nav.html.haml (13.5ms)
-  Rendered layouts/_flashes.html.haml (7.1ms)
-  Rendered layouts/_footer.html.haml (3.5ms)
-Completed 200 OK in 84ms (Views: 81.2ms | ActiveRecord: 0.2ms)
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (37.0ms)
+  Rendered dashboard/_admin_dashboard.html.haml (42.3ms)
+  Rendered dashboard/index.html.haml within layouts/application (48.7ms)
+  Rendered layouts/_nav.html.haml (11.0ms)
+  Rendered layouts/_flashes.html.haml (4.8ms)
+  Rendered layouts/_footer.html.haml (3.2ms)
+Completed 200 OK in 112ms (Views: 104.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 172.18.0.1 at 2025-02-25 04:03:25 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.haml within layouts/application
+  Rendered static_pages/index.html.haml within layouts/application (3.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_nav.html.haml:7
+  Rendered layouts/_nav.html.haml (30.1ms)
+  Rendered layouts/_flashes.html.haml (4.2ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 71ms (Views: 67.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 04:03:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Processing by DashboardController#index as HTML
+Creating scope :open. Overwriting existing method Ticket.open.
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (74.4ms)
+  Rendered dashboard/_admin_dashboard.html.haml (79.3ms)
+  Rendered dashboard/index.html.haml within layouts/application (85.1ms)
+  Rendered layouts/_nav.html.haml (8.1ms)
+  Rendered layouts/_flashes.html.haml (4.2ms)
+  Rendered layouts/_footer.html.haml (2.0ms)
+Completed 200 OK in 152ms (Views: 131.3ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/logout" for 172.18.0.1 at 2025-02-25 04:03:30 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+mQQ7z8vlv8LlNrsLie4T2dZv5KNgz7rtnRs4I/7kY1YsfENqZ64MXbLbh0Rm+dfJddHs41ur78zVmOJeutMIA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 172.18.0.1 at 2025-02-25 04:03:30 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.haml within layouts/application
+  Rendered static_pages/index.html.haml within layouts/application (5.5ms)
+  Rendered layouts/_nav.html.haml (8.9ms)
+  Rendered layouts/_flashes.html.haml (4.5ms)
+  Rendered layouts/_footer.html.haml (2.0ms)
+Completed 200 OK in 56ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.18.0.1 at 2025-02-25 04:03:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.haml within layouts/application
+  Rendered users/sessions/new.html.haml within layouts/application (21.4ms)
+  Rendered layouts/_nav.html.haml (9.1ms)
+  Rendered layouts/_flashes.html.haml (4.7ms)
+  Rendered layouts/_footer.html.haml (2.2ms)
+Completed 200 OK in 82ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 172.18.0.1 at 2025-02-25 04:03:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nje3VxbSPCg86nKWD2Z3e0HLfpD8M9HfAVauSmMB2XYO+AWJ8GBW7/2TBD5RKaTR/df9u+m2QrPwrsV4rQyN5Q==", "user"=>{"email"=>"tylercozzocrea@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tylercozzocrea@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 140ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 04:03:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Processing by DashboardController#index as HTML
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (31.6ms)
+  Rendered dashboard/_organization_approved_dashboard.html.erb (34.1ms)
+  Rendered dashboard/index.html.haml within layouts/application (38.4ms)
+  Rendered layouts/_nav.html.haml (8.0ms)
+  Rendered layouts/_flashes.html.haml (4.1ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 112ms (Views: 85.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/dashboard" for 172.18.0.1 at 2025-02-25 04:04:55 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.6/lib/active_record/log_subscriber.rb:98
+Processing by DashboardController#index as HTML
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:16
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tickets"[0m
+  ↳ app/controllers/dashboard_controller.rb:36
+  Rendering dashboard/index.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/tickets/_index.html.erb:13
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT "resource_categories".* FROM "resource_categories"[0m
+  ↳ app/views/tickets/_index.html.erb:19
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/tickets/_index.html.erb:34
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mRegion Load (0.1ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mCACHE ResourceCategory Load (0.0ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  [1m[36mCACHE Region Load (0.0ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:37
+  [1m[36mResourceCategory Load (0.1ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/_index.html.erb:38
+  Rendered tickets/_index.html.erb (43.3ms)
+  Rendered dashboard/_organization_approved_dashboard.html.erb (46.6ms)
+  Rendered dashboard/index.html.haml within layouts/application (53.4ms)
+  Rendered layouts/_nav.html.haml (7.8ms)
+  Rendered layouts/_flashes.html.haml (4.1ms)
+  Rendered layouts/_footer.html.haml (1.9ms)
+Completed 200 OK in 110ms (Views: 97.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/tickets/8" for 172.18.0.1 at 2025-02-25 04:05:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:27
+  Rendering tickets/show.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:30
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:32
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:40
+  Rendered tickets/show.html.haml within layouts/application (29.5ms)
+  Rendered layouts/_nav.html.haml (8.2ms)
+  Rendered layouts/_flashes.html.haml (4.4ms)
+  Rendered layouts/_footer.html.haml (2.0ms)
+Completed 200 OK in 89ms (Views: 76.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tickets/7" for 172.18.0.1 at 2025-02-25 04:05:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:26
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:27
+  Rendering tickets/show.html.haml within layouts/application
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:30
+  [1m[36mResourceCategory Load (0.2ms)[0m  [1m[34mSELECT  "resource_categories".* FROM "resource_categories" WHERE "resource_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/tickets/show.html.haml:32
+  Rendered tickets/show.html.haml within layouts/application (28.2ms)
+  Rendered layouts/_nav.html.haml (9.0ms)
+  Rendered layouts/_flashes.html.haml (4.5ms)
+  Rendered layouts/_footer.html.haml (2.1ms)
+Completed 200 OK in 99ms (Views: 85.3ms | ActiveRecord: 1.3ms)
 
 
