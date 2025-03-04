@@ -18,5 +18,10 @@ FactoryBot.define do
         trait :admin do
             role { :admin }
         end
+
+        trait :email do
+          email { "fakeemail@gmail.com" }
+        end
+
     end
 end
