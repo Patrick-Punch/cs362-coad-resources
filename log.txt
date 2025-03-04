@@ -954,3 +954,5 @@ Processing by TicketsController#show as HTML
 Completed 200 OK in 99ms (Views: 85.3ms | ActiveRecord: 1.3ms)
 
 
+[61] ! Terminating timed out worker: 95
+[61] - Worker 0 (pid: 859) booted, phase: 0

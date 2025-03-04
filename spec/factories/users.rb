@@ -1,6 +1,6 @@
 FactoryBot.define do
     factory :user do
-        email
+        sequence(:email) { |n| "fakeemail#{n}@example.com" }
         password { "fake_password" }
 
         before(:create) { |user| user.skip_confirmation! }
@@ -18,10 +18,5 @@ FactoryBot.define do
         trait :admin do
             role { :admin }
         end
-
-        trait :email do
-          email { "fakeemail@gmail.com" }
-        end
-
     end
 end
