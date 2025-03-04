@@ -26,5 +26,41 @@ RSpec.describe DashboardController, type: :controller do
     it 'index' do
       expect(get(:index)).to be_successful
     end
+
+    it 'ticket status: open' do
+      get(:index, params: {status: 'Open'})
+      expect(assigns(:pagy)).to be_a(Pagy)
+      expect(response).to be_successful
+    end
+
+    it 'ticket status: closed' do
+      get(:index, params: {status: 'Closed'})
+      expect(assigns(:pagy)).to be_a(Pagy)
+      expect(response).to be_successful
+    end
+
+    it 'ticket status: captured' do
+      get(:index, params: {status: 'Captured'})
+      expect(assigns(:pagy)).to be_a(Pagy)
+      expect(response).to be_successful
+    end
+
+    it 'ticket status: my captured' do
+      get(:index, params: {status: 'My Captured'})
+      expect(assigns(:pagy)).to be_a(Pagy)
+      expect(response).to be_successful
+    end
+
+    it 'ticket status: my closed' do
+      get(:index, params: {status: 'My Closed'})
+      expect(assigns(:pagy)).to be_a(Pagy)
+      expect(response).to be_successful
+    end
+
+    it 'ticket status: none' do
+      get(:index, params: {status: ''})
+      expect(assigns(:pagy)).to be_a(Pagy)
+      expect(response).to be_successful
+    end
   end
 end
