@@ -1,25 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe 'Approving an organization', type: :feature do
-    before do 
+    before do
         @organization = create(:organization)
-    end 
+        @admin = create(:user, :admin)
+    end
 
     it 'can be approved by clicking all' do
         log_in_as(@admin)
 
         visit root_path
-    
+
         click_on 'Organizations'
         click_on 'All'
-    
-        fill_in 'Name', with: 'Test Name'
-    
-        click_on 'Add Region'
-    
+        click_on @organization.name
+        click_on 'Approve'
+
         expect(current_path).to eq '/organizations'
 
-    end 
+    end
 
 end
 
