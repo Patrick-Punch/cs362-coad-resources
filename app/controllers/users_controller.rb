@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :authenticate_admin
+
   def index
-    puts "test"
+    @users = User.all
   end
 end

@@ -15,7 +15,6 @@ RSpec.describe 'Releasing a ticket by an', type: :feature do
     click_on @ticket.name
     click_on 'Release'
 
-    expect(current_path).to eq '/dashboard'
+    expect(current_path).to eq dashboard_path
   end
-
 end
