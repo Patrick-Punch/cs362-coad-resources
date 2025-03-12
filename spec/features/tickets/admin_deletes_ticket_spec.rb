@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'When Deleting a Ticket', type: :feature do
   before do
-    @ticket = create(:ticket, name: "test ticket")
+    @ticket = create(:ticket)
     @admin = create(:user, :admin)
   end
 
@@ -14,7 +14,7 @@ RSpec.describe 'When Deleting a Ticket', type: :feature do
     click_on @ticket.name
     click_on 'Delete'
 
-    expect(current_path).to eq '/dashboard'
+    expect(current_path).to eq dashboard_path
     expect(page.body).to have_no_text(@ticket.name)
   end
 end
