@@ -52,8 +52,19 @@ RSpec.describe OrganizationsController, type: :controller do
     end
   
     describe 'as a logged-in user without organization' do
+      let(:unapproved_user) { FactoryBot.create(:user, organization: nil) }
+      let(:invalid_organization_params) { FactoryBot.attributes_for(:organization, name: nil) }
+
       before { sign_in unapproved_user }
-  
+
+      context 'when organization creation fails' do
+        it 'renders the new template and assigns @organization' do
+          post :create, params: { organization: invalid_organization_params }
+          expect(response).to render_template(:new)
+          expect(assigns(:organization)).to be_a_new(Organization)
+        end
+      end
+
       it 'index renders successfully' do
         get :index
         expect(response).to be_successful
@@ -96,7 +107,18 @@ RSpec.describe OrganizationsController, type: :controller do
     end
   
     describe 'as logged-in user with organization' do
+      let(:approved_user) { FactoryBot.create(:user, organization: organization) }
+     # let(:organization) { FactoryBot.create(:organization) }
+      let(:invalid_organization_params) { FactoryBot.attributes_for(:organization, name: nil) }
+
       before { sign_in approved_user }
+
+      context 'when organization update fails' do
+        it 'redirects to dashboard' do
+          patch :update, params: { id: organization.id, organization: invalid_organization_params }
+          expect(response).to redirect_to(dashboard_path)
+        end
+      end
   
       it 'index renders successfully' do
         get :index
@@ -112,7 +134,7 @@ RSpec.describe OrganizationsController, type: :controller do
         get :new
         expect(response).to redirect_to(dashboard_path)
       end
-  
+      
       it 'show redirects to dashboard' do
         get :show, params: { id: organization.id }
         expect(response).to redirect_to(dashboard_path)
@@ -140,7 +162,27 @@ RSpec.describe OrganizationsController, type: :controller do
     end
   
     describe 'as admin' do
+
+      let(:admin) { FactoryBot.create(:user, :admin) }
+      let(:organization) { FactoryBot.create(:organization) }
+
       before { sign_in admin }
+
+      context 'when organization approval fails' do
+        it 'redirects to index' do
+          allow_any_instance_of(Organization).to receive(:update).and_return(false)
+          post :approve, params: { id: organization.id }
+          expect(response).to redirect_to(organizations_path)
+        end
+      end
+
+      context 'when organization rejection fails' do
+        it 'renders the show template' do
+          allow_any_instance_of(Organization).to receive(:update).and_return(false)
+          post :reject, params: { id: organization.id, organization: { rejection_reason: 'Test Reason' } }
+          expect(response).to redirect_to(organizations_path)
+        end
+      end
   
       it 'index renders successfully' do
         get :index
